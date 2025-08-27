@@ -1,13 +1,1 @@
-@@ .. @@
-   useEffect(() => {
-+    if (!sectionRef.current || projects.length === 0) return
-+    
-     const ctx = gsap.context(() => {
-       // Title animation
-       gsap.fromTo(
-@@ .. @@
-     }, sectionRef)
- 
-     return () => ctx.revert()
--  }, [])
-+  }, [projects]) // Re-run when projects change
+{"code":"rate-limited","message":"You have hit the rate limit. Please upgrade to keep chatting.","providerLimitHit":false,"isRetryable":true}
