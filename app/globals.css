@@ -1,0 +1,74 @@
+@@ .. @@
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+ 
++/* Critical CSS - Load first */
++:root {
++  --font-inter: "Inter", sans-serif;
++}
++
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ html {
+   scroll-behavior: smooth;
++  -webkit-font-smoothing: antialiased;
++  -moz-osx-font-smoothing: grayscale;
+ }
+ 
+ body {
+   font-family: var(--font-inter);
+   background: #020617;
+   color: white;
+   overflow-x: hidden;
++  font-display: swap;
+ }
+ 
+-:root {
+-  --font-inter: "Inter", sans-serif;
+-}
+-
+-* {
+-  margin: 0;
+-  padding: 0;
+-  box-sizing: border-box;
+-}
+-
+-html {
+-  scroll-behavior: smooth;
+-}
+-
+-body {
+-  font-family: var(--font-inter);
+-  background: #020617;
+-  color: white;
+-  overflow-x: hidden;
+-}
+-
+ /* Custom scrollbar */
+ ::-webkit-scrollbar {
+   width: 8px;
+@@ -58,6 +42,11 @@ body {
+   background: #2563eb;
+ }
+ 
++/* Optimize rendering */
++.gpu-accelerated {
++  transform: translateZ(0);
++}
++
+ /* Glassmorphism utilities */
+ .glass {
+   background: rgba(15, 23, 42, 0.8);
+@@ -91,6 +80,7 @@ body {
+ .text-gradient {
+   background: linear-gradient(135deg, #3b82f6, #06b6d4);
+   -webkit-background-clip: text;
++  background-clip: text;
+   -webkit-text-fill-color: transparent;
+-  background-clip: text;
+ }
